@@ -1,0 +1,13 @@
+language: perl
+
+perl:
+  - "5.16"
+
+before_install:
+  - cpanm Carton
+
+install:
+  - carton install
+
+script:
+  - carton exec riji publish
