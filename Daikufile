@@ -1,0 +1,8 @@
+desc 'git を masterに変える';
+task checkout_master => sub {
+    my ($task, @args) = @_;
+    sh qw(git checkout master);
+};
+
+desc 'master に記事があるので master で作業するように setup';
+task setup => 'checkout_master';

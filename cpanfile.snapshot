@@ -120,6 +120,30 @@ DISTRIBUTIONS
       Module::Build 0.38
       URI::Escape 0
       perl 5.008005
+  Daiku-1.001
+    pathname: S/SO/SONGMU/Daiku-1.001.tar.gz
+    provides:
+      Daiku 1.001
+      Daiku::CLI undef
+      Daiku::Daikufile undef
+      Daiku::File undef
+      Daiku::Registry undef
+      Daiku::Role undef
+      Daiku::SuffixRule undef
+      Daiku::Task undef
+    requirements:
+      Getopt::Long 2.39
+      IPC::System::Simple 0
+      Module::Build::Tiny 0.035
+      Mouse 0.92
+      Mouse::Role 0
+      Parse::CommandLine 0
+      Pod::Usage 0
+      Scalar::Util 0
+      Tie::IxHash 0
+      Time::HiRes 1.9701
+      autodie 0
+      perl 5.008001
   Data-Dump-1.22
     pathname: G/GA/GAAS/Data-Dump-1.22.tar.gz
     provides:
@@ -587,6 +611,21 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 0
       Test::More 0.31
       Time::HiRes 0
+  IPC-System-Simple-1.25
+    pathname: P/PJ/PJF/IPC-System-Simple-1.25.tar.gz
+    provides:
+      IPC::System::Simple 1.25
+    requirements:
+      Carp 0
+      Exporter 0
+      ExtUtils::MakeMaker 6.30
+      List::Util 0
+      POSIX 0
+      Scalar::Util 0
+      constant 0
+      re 0
+      strict 0
+      warnings 0
   LWP-MediaTypes-6.02
     pathname: G/GA/GAAS/LWP-MediaTypes-6.02.tar.gz
     provides:
@@ -868,6 +907,17 @@ DISTRIBUTIONS
       Scalar::Util 1.18
       Test::More 0.42
       perl 5.00503
+  Parse-CommandLine-0.01
+    pathname: S/SO/SONGMU/Parse-CommandLine-0.01.tar.gz
+    provides:
+      Parse::CommandLine 0.01
+    requirements:
+      CPAN::Meta 0
+      CPAN::Meta::Prereqs 0
+      ExtUtils::CBuilder 0
+      Module::Build 0.38
+      parent 0
+      perl 5.008001
   Path-Class-0.33
     pathname: K/KW/KWILLIAMS/Path-Class-0.33.tar.gz
     provides:
@@ -1427,6 +1477,13 @@ DISTRIBUTIONS
       XSLoader 0.02
       parent 0.221
       perl 5.008001
+  Tie-IxHash-1.23
+    pathname: C/CH/CHORNY/Tie-IxHash-1.23.tar.gz
+    provides:
+      Tie::IxHash 1.23
+    requirements:
+      Test::More 0
+      perl 5.005
   Tiffany-1.01
     pathname: T/TO/TOKUHIROM/Tiffany-1.01.tar.gz
     provides:

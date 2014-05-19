@@ -13,5 +13,8 @@ before_install:
 install:
   - carton install
 
+before_script:
+  - carton exec daiku setup
+
 script:
   - carton exec riji publish

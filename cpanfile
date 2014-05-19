@@ -1,1 +1,2 @@
-requires 'Riji'
+requires 'Riji';
+requires 'Daiku';
