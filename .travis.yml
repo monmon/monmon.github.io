@@ -11,7 +11,7 @@ before_install:
   - cpanm Carton
 
 install:
-  - carton install
+  - 'carton install --deployment'
 
 before_script:
   - carton exec daiku setup
