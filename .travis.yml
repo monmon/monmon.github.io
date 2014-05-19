@@ -3,6 +3,10 @@ language: perl
 perl:
   - "5.16"
 
+branches:
+  only:
+      - master
+
 before_install:
   - cpanm Carton
 
