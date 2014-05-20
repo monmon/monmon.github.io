@@ -17,4 +17,11 @@ before_script:
   - carton exec daiku setup
 
 script:
-  - carton exec riji publish
+  - carton exec daiku publish
+
+after_success:
+  - '[ "$TRAVIS_BRANCH" == "master" ] && [ "$GH_TOKEN" ] && carton exec daiku push_github'
+
+env:
+  global:
+      - secure: "RpupCpR1J/p+JIqdJ7WUk13NnA1LgpxqVPjHpY18XSTrKZy6YAEtzPu3aVqARFFN40iipiyxSCm93mzOSWwdl9FUyV//ythOCSpF3fs9NKSP/9HilGb8x3yIbpastRML2m1voSYmuR5IKOELc4axVEVapYenUoCVlVhcZ0oVXkM="
