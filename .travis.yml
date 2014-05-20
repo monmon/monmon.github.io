@@ -24,4 +24,6 @@ after_success:
 
 env:
   global:
-      - secure: "RpupCpR1J/p+JIqdJ7WUk13NnA1LgpxqVPjHpY18XSTrKZy6YAEtzPu3aVqARFFN40iipiyxSCm93mzOSWwdl9FUyV//ythOCSpF3fs9NKSP/9HilGb8x3yIbpastRML2m1voSYmuR5IKOELc4axVEVapYenUoCVlVhcZ0oVXkM="
+    - GIT_AUTHOR_NAME="monmon"
+    - GIT_AUTHOR_EMAIL="lesamoureuses@gmail.com"
+    - secure: "RpupCpR1J/p+JIqdJ7WUk13NnA1LgpxqVPjHpY18XSTrKZy6YAEtzPu3aVqARFFN40iipiyxSCm93mzOSWwdl9FUyV//ythOCSpF3fs9NKSP/9HilGb8x3yIbpastRML2m1voSYmuR5IKOELc4axVEVapYenUoCVlVhcZ0oVXkM="
