@@ -18,7 +18,8 @@ task push_github => sub {
     my ($task, @args) = @_;
 
     sh qw(git add -A);
-    sh qw(git commit -m 'Update blog on Travis');
+    my $commit_message = 'Update blog on Travis';
+    sh qw(git commit -m $commit_message);
     # Token が出力されないように --quite しつつ、 2> /dev/null
     sh qw(git push --quiet https://$GH_TOKEN@github.com/monmon/monmon.github.io master 2> /dev/null');
 };
