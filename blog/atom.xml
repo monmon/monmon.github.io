@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Your Blog Title</title>
+<link rel="alternate" href="http://yourblog.example.com/" />
+<author>Your name</author>
+<generator uri="https://github.com/Songmu/p5-Riji" version="0.0.14">Perl Riji</generator>
+<id>tag:yourblog.example.com,2014-05-18:</id>
+<updated>2014-05-18T22:43:26Z</updated>
+<entry>
+<title type="text">Sample</title>
+<link href="http://yourblog.example.com/entry/sample.html" />
+<author>
+<name>monmon</name>
+</author>
+<content><![CDATA[<h1>Sample</h1>
+]]></content>
+<id>tag:yourblog.example.com,2014-05-18:entry-sample.html</id>
+<published>2014-05-18T43:43:26+0000</published>
+<updated>2014-05-18T22:43:26Z</updated>
+</entry>
+</feed>
