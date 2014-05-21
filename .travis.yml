@@ -20,7 +20,7 @@ script:
   - carton exec daiku publish
 
 after_success:
-  - '[ "$TRAVIS_BRANCH" == "master" ] && [ "$GH_TOKEN" ] && carton exec daiku push_github 2> /dev/null' # Token が出力されないように 2> /dev/null
+  - '[ "$TRAVIS_BRANCH" == "master" ] && [ "$GH_TOKEN" ] && carton exec daiku push_github 2> /dev/null'
 
 env:
   global:
