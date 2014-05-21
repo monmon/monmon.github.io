@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-<title>Your Blog Title</title>
-<link rel="alternate" href="http://yourblog.example.com/" />
-<author>Your name</author>
+<title>メモ用にcommitしていくblog</title>
+<link rel="alternate" href="http://monmon.github.io/blog/" />
+<author>monmon</author>
 <generator uri="https://github.com/Songmu/p5-Riji" version="0.0.14">Perl Riji</generator>
-<id>tag:yourblog.example.com,2014-05-18:</id>
-<updated>2014-05-18T22:43:26Z</updated>
+<id>tag:monmon.github.io,2014-05-18:blog:</id>
+<updated>2014-05-21T21:28:02Z</updated>
 <entry>
-<title type="text">Sample</title>
-<link href="http://yourblog.example.com/entry/sample.html" />
+<title type="text">Hello, world!</title>
+<link href="http://monmon.github.io/blog/entry/2014-05-22-01.html" />
 <author>
 <name>monmon</name>
 </author>
-<content><![CDATA[<h1>Sample</h1>
+<content><![CDATA[<h1>Hello, world!</h1>
+
+<p>こんにちは世界</p>
 ]]></content>
-<id>tag:yourblog.example.com,2014-05-18:entry-sample.html</id>
-<published>2014-05-18T43:43:26+0000</published>
-<updated>2014-05-18T22:43:26Z</updated>
+<id>tag:monmon.github.io,2014-05-21:blog:entry-2014-05-22-01.html</id>
+<published>2014-05-21T28:28:02+0000</published>
+<updated>2014-05-21T21:28:02Z</updated>
 </entry>
 </feed>
