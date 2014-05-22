@@ -20,6 +20,6 @@ task push_blog_to_github => sub {
     sh qw(git add -A);
     sh qw(git commit -m), 'Update blog on Travis';
 
-    # Token が出力されないように --quite & 2> /dev/null
+    # Token が出力されないように --quiet & 2> /dev/null
     sh "git push --quiet https://$ENV{GH_TOKEN}\@github.com/monmon/monmon.github.io master 2> /dev/null";
 };
