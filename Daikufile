@@ -14,7 +14,7 @@ task publish => sub {
 };
 
 desc '作られた記事を github に push';
-task push_github => sub {
+task push_blog_to_github => sub {
     my ($task, @args) = @_;
 
     sh qw(git add -A);
