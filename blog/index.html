@@ -20,6 +20,299 @@
   </ul>
 </nav>
 <article>
+  <h1><a href="http://monmon.github.io/blog/entry/2014-05-25-03.html">Start Developing iOS Apps Today をやってみる その3</a></h1>
+  <time pubdate>2014-05-25 12:06</time>
+  
+
+<h2>Tutorial: Storyboards</h2>
+
+<h3>Adopt Auto Layout</h3>
+
+<p>今までで作ったアプリはrotateすると位置がずれる</p>
+
+<p><img src="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/Art/ios_simulator_landscape_2x.png" width="600" alt="" /></p>
+
+<p>なので、storyboadでテキストフィールドからテキストフィールドの外に向かって真上にctrlドラッグして"Top Space to Top Layout Guide"を選ぶ</p>
+
+<p><img src="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/Art/autolayout_menu_2x.png" width="600" alt="" /></p>
+
+<p>これはtext field と the navigation barの位置の調整のため</p>
+
+<p>同様に</p>
+
+<ul>
+<li>右にCtrlドラッグで"Trailing Space to Container"を選ぶ</li>
+<li>左にCtrlドラッグで"Leading Space to Container"を選ぶ</li>
+</ul>
+
+
+<p>うまくいかなかったら</p>
+
+<ul>
+<li>text field を選択、メニューから Editor > Resolve Auto Layout Issues > "Reset to Suggested Constraints"</li>
+</ul>
+
+
+<p>もしくは</p>
+
+<ul>
+<li>text field を選択、メニューから Editor > Resolve Auto Layout Issues > Clear Constraints</li>
+</ul>
+
+
+<h3>Creating a Second Scene</h3>
+
+<p>table viewを加える</p>
+
+<blockquote><p>Open the Object library in the utility area. (To open the library with a menu command, choose View > Utilities > Show Object Library.)</p></blockquote>
+
+<p>Object Libraryを開く</p>
+
+<p>table view controllerをto-do-item の左にドラッグすると以下のようになる</p>
+
+<p><img src="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/Art/two_scenes_2x.png" width="600" alt="" /></p>
+
+<p>table view controller を選び "Attributes inspector" の "Is Initial View Controller"にチェックを付けて起動時に使われるようにする</p>
+
+<p><img src="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/Art/initial_view_controller_2x.png" width="400" alt="" /></p>
+
+<p>矢印を table view controller の方にドラッグしても同じことができる</p>
+
+<h3>Display Static Content in a Table View</h3>
+
+<p>table view を選択し、Static Cells を選んで、cell 1つずつを Basicにするとタイトルが入れられるようになる
+あとはコピペ or Optionドラッグでコピーしていくと以下の画像のようになる</p>
+
+<blockquote><ol>
+<li>In the outline view for your interface, select Table View under Table View Controller.</li>
+<li>With the table view selected, open the Attributes inspector image: <img src="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/Art/inspector_attributes_2x.png" alt="" /></li>
+<li>In the Attributes inspector, choose Static Cells from the pop-up menu next to the Content option.
+Three empty table view cells appear in your table view.</li>
+<li>In the outline view or on the canvas, select the top cell.</li>
+<li>In the Attributes inspector, choose Basic from the pop-up menu next to the Style option.
+The Basic style includes a label, so Xcode creates a label with the text “Title” in the table cell.</li>
+<li>In the outline view or on the canvas, select the label.</li>
+<li>In the Attributes inspector, change the text of the label from “Title” to “Mow the Lawn.” For the change to take effect, press Enter or click outside the utility area.
+Alternatively, you can edit a label by double-clicking it and editing the text directly.</li>
+<li>Repeat steps 4–7 for the other cells, giving them text for other likely to-do items.</li>
+<li>Create enough cells so that the items more than fill the screen. You can create new cells by copying and pasting them or by holding down the Option key when dragging a cell.</li>
+</ol>
+</blockquote>
+
+<p><img src="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/Art/ios_simulator_static_table_view_2x.png" width="400" alt="" /></p>
+
+<h3>Add a Segue to Navigate Forward</h3>
+
+<p>2つのview controllerをsegueで繋ぐ</p>
+
+<p>segueを作る前にto-do list table view controller を navigation controller上でラップする</p>
+
+<blockquote><ol>
+<li>In the outline view, select Table View Controller.
+With the view controller selected, choose Editor > Embed In > Navigation Controller.</li>
+</ol>
+</blockquote>
+
+<p>これでnavigation barが追加される</p>
+
+<p><img src="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/Art/ios_simulator_static_table_view_with_nav_2x.png" width="400" alt="" /></p>
+
+<p>次にAttributes inspectorでTitle を "My To-Do List" に変え、Object libraryから"Bar Button Item"を右上にドラッグし、Attributes inspectorのIdentifierを"Add"に変えれば以下のようになる</p>
+
+<p><img src="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/Art/ios_simulator_nav_bar_2x.png" width="400" alt="" /></p>
+
+<h4>To configure the Add button</h4>
+
+<p>+ を選んでadd-to-do-item view controller にCtrlドラッグする
+segueのアクションのショートカットが出てくるのでpushを選ぶ
+これでsegueが追加され、add-to-do-item view controllerにnavigation barも追加された</p>
+
+<p>この状態だとnavigation bar が追加されたためにAuto Layout のwarningが出ている</p>
+
+<p><img src="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/Art/al_issue_navigator_2x.png" width="600" alt="" /></p>
+
+<hr />
+
+<p>今回はここまで</p>
+
+</article>
+<article>
+  <h1><a href="http://monmon.github.io/blog/entry/2014-05-25-02.html">Start Developing iOS Apps Today をやってみる その2</a></h1>
+  <time pubdate>2014-05-25 11:57</time>
+  
+
+<h2>Designing a User Interface</h2>
+
+<h3>Use Auto Layout to Position Views</h3>
+
+<blockquote><p>When you start positioning views in your storyboard, you need to consider a variety of situations. iOS apps run on a number of different devices, with various screen sizes, orientations, and languages.</p></blockquote>
+
+<p>To help you use views to create a versatile interface, Xcode offers a tool called Auto Layout. Auto Layout is a system for expressing relationships between views in your app’s user interface.</p>
+
+<p><img src="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/Art/al_menu_2x.png" width="600" alt="" /></p>
+
+<p>スクリーンサイズ、向き、言語の違いを考えないといけないが、Auto Layoutがよろしくやってくれる</p>
+
+<h2>Defining the Interaction</h2>
+
+<h3>View Controllers</h3>
+
+<blockquote><p>After you’ve built a basic view hierarchy, your next step is to control the visual elements and respond to user input. In an iOS app, you use a view controller (UIViewController) to manage a content view with its hierarchy of subviews.</p></blockquote>
+
+<p><img src="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/Art/view_layer_objects_2x.png" width="600" alt="" /></p>
+
+<p>viewの階層を作ったらview controllerを使ってviewを扱う</p>
+
+<blockquote><p>This usually means writing a custom UIViewController subclass for each content view hierarchy. If your app has multiple content views, you use a different custom view controller class for each content view.</p></blockquote>
+
+<p>content viewの数だけview controllerを作る</p>
+
+<h3>Actions</h3>
+
+<blockquote><p>An action is a piece of code that’s linked to some kind of event that can occur in your app. When that event takes place, the code gets executed. You can define an action to accomplish anything from manipulating a piece of data to updating the user interface.</p></blockquote>
+
+<p>actionはアプリ上のイベントが起こった時にUIの更新操作をするためのもの。</p>
+
+<blockquote><p>You define an action by creating and implementing a method with an IBAction return type and a sender parameter.</p>
+
+<p><code>- (IBAction)restoreDefaults:(id)sender;</code></p>
+
+<p>The sender parameter points to the object that was responsible for triggering the action. The IBAction return type is a special keyword; it’s like the void keyword, but it indicates that the method is an action that you can connect to from your storyboard in Interface Builder (which is why the keyword has the IB prefix). You’ll learn more about how to link an IBAction action to an element in your storyboard in Tutorial: Storyboards.</p></blockquote>
+
+<p>senderというパラメータを受け取ってIBActionを返すmethodを実装する
+senderはactionをtriggerしたオブジェクト
+IBActionはstroyboardと繋げるためのspecial keyword</p>
+
+<h3>Outlets</h3>
+
+<blockquote><p>Outlets provide a way to reference objects from your interface—the objects you added to your storyboard—from source code files. You create an outlet by Control-dragging from a particular object in your storyboard to a view controller file.</p></blockquote>
+
+<p>outletを使うとstoryboadで作ったUIをコードから参照することができる</p>
+
+<h3>Navigation Controllers</h3>
+
+<blockquote><p>If your app has more than one content view hierarchy, you need to be able to transition between them. For this, you’ll use a specialized type of view controller: a navigation controller (UINavigationController).</p></blockquote>
+
+<p>複数のviewがあればUINavigationControllerを使って遷移を管理する必要がある</p>
+
+<blockquote><p>The set of view controllers managed by a particular navigation controller is called its navigation stack. The navigation stack is a last-in, first-out collection of custom view controller objects. The first item added to the stack becomes the root view controller and is never popped off the stack. Other view controllers can be pushed on or popped off the navigation stack.</p></blockquote>
+
+<p>複数のview controllerはnavigation stackと呼ばれるもので管理される
+navigation stackはlast-in, first-outの集合
+はじめのアイテムはroot view controllerで、これはstackからpopされない
+他のcontrollerはnavigation stack にpushまたはpopできる</p>
+
+<h3>Use Storyboards to Define Navigation</h3>
+
+<blockquote><p>In the first tutorial, the storyboard you worked with had one scene. In most apps, a storyboard is composed of a sequence of scenes, each of which represents a view controller and its view hierarchy. Scenes are connected by segues, which represent a transition between two view controllers: the source and the destination.</p></blockquote>
+
+<p><img src="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/Art/segue_2x.png" width="600" alt="segue" /></p>
+
+<p>storyboardで複数のview controllerを表現吸う時にはsegueを使う</p>
+
+<blockquote><p>There are several types of segues you can create:</p>
+
+<ul>
+<li>Push. A push segue adds the destination view controller to the navigation stack. Push segues may only be used when the source view controller is connected to a navigation controller.</li>
+<li>Modal. A modal segue is simply one view controller presenting another controller modally, requiring a user to perform some operation on the presented controller before returning to the main flow of the app. A modal view controller isn’t added to a navigation stack; instead, it’s generally considered to be a child of the presenting view controller. The presenting view controller is responsible for dismissing the modal view controller it created and presented.</li>
+<li>Custom. You can define your own custom transition by subclassing UIStoryboardSegue.</li>
+<li>Unwind. An unwind segue moves backward through one or more segues to return the user to an existing instance of a view controller. You use unwind segues to implement reverse navigation.</li>
+</ul>
+</blockquote>
+
+<p>segueの種類</p>
+
+<ul>
+<li>push：矢印の先のview controllerをnavigation stackにpushする</li>
+<li>modal：navigation stackにはpushしない。modal view controllerが終わると元のview controllerに戻る</li>
+<li>custom：UIStoryboardSegueのサブクラスを定義することで遷移をカスタマイズできる</li>
+<li>unwind：どのview controllerに戻るか定義できる</li>
+</ul>
+
+
+<hr />
+
+<p>今回はここまで</p>
+
+<p>次回は<a href="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/SecondTutorial.html#//apple_ref/doc/uid/TP40011343-CH8-SW1">Tutorial: Storyboards</a>から</p>
+
+</article>
+<article>
+  <h1><a href="http://monmon.github.io/blog/entry/2014-05-25-01.html">Start Developing iOS Apps Today をやってみる その1</a></h1>
+  <time pubdate>2014-05-25 11:41</time>
+  
+
+<p><a href="http://rebuild.fm/39/">#rebuildfm ep. 39</a> 聴いて<a href="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/index.html">Start Developing iOS Apps Today</a>というto-do listのiOS アプリのチュートリアルをやることにしたのでメモ。</p>
+
+<h2>Tutorial: Basics</h2>
+
+<p><a href="https://deveioper.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/FirstTutorial.html#//apple_ref/doc/uid/TP40011343-CH3-SW1">https://deveioper.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/FirstTutorial.html#//apple_ref/doc/uid/TP40011343-CH3-SW1</a></p>
+
+<p>画像の通りサクサクやっていけばHello, World!が出せる</p>
+
+<h2>App Development Process</h2>
+
+<p><a href="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/AppDevelopmentProcess.html#//apple_ref/doc/uid/TP40011343-CH4-SW1">https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/AppDevelopmentProcess.html#//apple_ref/doc/uid/TP40011343-CH4-SW1</a></p>
+
+<h3>Defining the Concept</h3>
+
+<p>コンセプトの定義について</p>
+
+<blockquote><p>Here are some key questions to consider when arriving at a concept:</p>
+
+<p><strong>Who is your audience?</strong> Your app content and experience will differ depending on whether you’re writing a children’s game, a to-do list app, or even a test app for your own learning.</p>
+
+<p><strong>What is the purpose of your app?</strong> It’s important for an app to have a clearly defined purpose. Part of defining the purpose is understanding what one thing will motivate users to use your app.</p>
+
+<p><strong>What problem is your app trying to solve?</strong> An app should solve a single problem well instead of trying to offer solutions to multiple distinct problems. If you find that your app is trying to solve unrelated problems, you might consider writing multiple apps.</p>
+
+<p><strong>What content will your app incorporate?</strong> Consider what type of content your app will present to users and how they’ll interact with it. Design the user interface to complement the type of content that’s presented in the app.</p>
+
+<p>An app concept doesn’t have to be completely polished or finished when you start developing your app. Still, it helps to have an idea of where you’re going and what you need to do to get there.</p></blockquote>
+
+<h3>Implementing the Behavior</h3>
+
+<h4>Classes Are Blueprints for Objects</h4>
+
+<p>allocate と initializeの目的
+メモリを用意して、初期化</p>
+
+<blockquote><p>You make an object by creating an instance of a particular class. You do this by allocating it and initializing it with acceptable default values. When you allocate an object, you set aside enough memory for the object and set all instance variables to zero. Initialization sets an object’s initial state—that is, its instance variables and properties—to reasonable values and then returns the object. The purpose of initialization is to return a usable object. You need to both allocate and initialize an object to be able to use it.</p></blockquote>
+
+<h4>Objects Communicate Through Messages</h4>
+
+<p>メッセージを投げる</p>
+
+<blockquote><p>If you have an object <code>somePerson</code> of class <code>XYZPerson</code>, you can send it the <code>sayHello</code> message like this:</p>
+
+<p>[somePerson sayHello];</p>
+
+<p>The reference on the left, somePerson, is the receiver of the message. The message on the right, sayHello, is the name of the method to call on that receiver. In other words, when the above line of code is executed, somePerson will be sent the sayHello message.</p>
+
+<p>https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/Art/programflow1_2x.png</p></blockquote>
+
+<p>somePersonはsayHello（somePersonのmethod）というメッセージを投げられる</p>
+
+<h2>Designing a User Interface</h2>
+
+<h3>The View Hierarchy</h3>
+
+<blockquote><p>Views not only display themselves onscreen and react to user input, they also serve as containers for other views.</p></blockquote>
+
+<p>viewは自身をスクリーンに表示したり、ユーザの入力に反応したりするだけでなく、他のviewの入れ物にもなる</p>
+
+<blockquote><p>At the top of the view hierarchy is the window object. Represented by an instance of the UIWindow class, a window serves as the basic container into which you can add your view objects for display onscreen.</p></blockquote>
+
+<p>一番上の階層はUIWindow</p>
+
+<hr />
+
+<p>今回はここまで</p>
+
+<p>次回は「<a href="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/DesigningaUserInterface.html#//apple_ref/doc/uid/TP40011343-CH6-SW3">Building an Interface Using Views</a>」</p>
+
+</article>
+<article>
   <h1><a href="http://monmon.github.io/blog/entry/2014-05-22-01.html">Hello, world!</a></h1>
   <time pubdate>2014-05-21 21:28</time>
   
@@ -30,7 +323,9 @@
 <aside class="tags">
   <h1>Tags</h1>
   <ul class="tags">
+  <li><a href="http://monmon.github.io/blog/tag/ios.html">ios(2)</a></li>
   <li><a href="http://monmon.github.io/blog/tag/riji.html">riji(1)</a></li>
+  <li><a href="http://monmon.github.io/blog/tag/iOS.html">iOS(1)</a></li>
   </ul>
 </aside>
   </section>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="http://monmon.github.io/blog/atom.xml">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
+  <title>
+    Start Developing iOS Apps Today をやってみる その1 | メモ用にcommitしていくblog
+
+  </title>
+</head>
+<body>
+  <header>
+    <h1><a href="http://monmon.github.io/blog/">メモ用にcommitしていくblog</a></h1>
+  </header>
+  <section>
+<nav>
+  <ul class="paginate">
+    <li class="prev">prev: <a href="http://monmon.github.io/blog/entry/2014-05-22-01.html">Hello, world!</a>
+    <li class="next">next: <a href="http://monmon.github.io/blog/entry/2014-05-25-02.html">Start Developing iOS Apps Today をやってみる その2</a>
+  </ul>
+</nav>
+
+<article>
+  <aside class="tags">
+    <h1 class="tags">tags</h1>
+    <ul class="tags">
+      <li><a href="http://monmon.github.io/blog/tag/iOS.html">iOS</a></li>
+    </ul>
+  </aside>
+  <div class="entry">
+    <h1>Start Developing iOS Apps Today をやってみる その1</h1>
+
+<p><a href="http://rebuild.fm/39/">#rebuildfm ep. 39</a> 聴いて<a href="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/index.html">Start Developing iOS Apps Today</a>というto-do listのiOS アプリのチュートリアルをやることにしたのでメモ。</p>
+
+<h2>Tutorial: Basics</h2>
+
+<p><a href="https://deveioper.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/FirstTutorial.html#//apple_ref/doc/uid/TP40011343-CH3-SW1">https://deveioper.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/FirstTutorial.html#//apple_ref/doc/uid/TP40011343-CH3-SW1</a></p>
+
+<p>画像の通りサクサクやっていけばHello, World!が出せる</p>
+
+<h2>App Development Process</h2>
+
+<p><a href="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/AppDevelopmentProcess.html#//apple_ref/doc/uid/TP40011343-CH4-SW1">https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/AppDevelopmentProcess.html#//apple_ref/doc/uid/TP40011343-CH4-SW1</a></p>
+
+<h3>Defining the Concept</h3>
+
+<p>コンセプトの定義について</p>
+
+<blockquote><p>Here are some key questions to consider when arriving at a concept:</p>
+
+<p><strong>Who is your audience?</strong> Your app content and experience will differ depending on whether you’re writing a children’s game, a to-do list app, or even a test app for your own learning.</p>
+
+<p><strong>What is the purpose of your app?</strong> It’s important for an app to have a clearly defined purpose. Part of defining the purpose is understanding what one thing will motivate users to use your app.</p>
+
+<p><strong>What problem is your app trying to solve?</strong> An app should solve a single problem well instead of trying to offer solutions to multiple distinct problems. If you find that your app is trying to solve unrelated problems, you might consider writing multiple apps.</p>
+
+<p><strong>What content will your app incorporate?</strong> Consider what type of content your app will present to users and how they’ll interact with it. Design the user interface to complement the type of content that’s presented in the app.</p>
+
+<p>An app concept doesn’t have to be completely polished or finished when you start developing your app. Still, it helps to have an idea of where you’re going and what you need to do to get there.</p></blockquote>
+
+<h3>Implementing the Behavior</h3>
+
+<h4>Classes Are Blueprints for Objects</h4>
+
+<p>allocate と initializeの目的
+メモリを用意して、初期化</p>
+
+<blockquote><p>You make an object by creating an instance of a particular class. You do this by allocating it and initializing it with acceptable default values. When you allocate an object, you set aside enough memory for the object and set all instance variables to zero. Initialization sets an object’s initial state—that is, its instance variables and properties—to reasonable values and then returns the object. The purpose of initialization is to return a usable object. You need to both allocate and initialize an object to be able to use it.</p></blockquote>
+
+<h4>Objects Communicate Through Messages</h4>
+
+<p>メッセージを投げる</p>
+
+<blockquote><p>If you have an object <code>somePerson</code> of class <code>XYZPerson</code>, you can send it the <code>sayHello</code> message like this:</p>
+
+<p>[somePerson sayHello];</p>
+
+<p>The reference on the left, somePerson, is the receiver of the message. The message on the right, sayHello, is the name of the method to call on that receiver. In other words, when the above line of code is executed, somePerson will be sent the sayHello message.</p>
+
+<p>https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/Art/programflow1_2x.png</p></blockquote>
+
+<p>somePersonはsayHello（somePersonのmethod）というメッセージを投げられる</p>
+
+<h2>Designing a User Interface</h2>
+
+<h3>The View Hierarchy</h3>
+
+<blockquote><p>Views not only display themselves onscreen and react to user input, they also serve as containers for other views.</p></blockquote>
+
+<p>viewは自身をスクリーンに表示したり、ユーザの入力に反応したりするだけでなく、他のviewの入れ物にもなる</p>
+
+<blockquote><p>At the top of the view hierarchy is the window object. Represented by an instance of the UIWindow class, a window serves as the basic container into which you can add your view objects for display onscreen.</p></blockquote>
+
+<p>一番上の階層はUIWindow</p>
+
+<hr />
+
+<p>今回はここまで</p>
+
+<p>次回は「<a href="https://developer.apple.com/library/iOS/referencelibrary/GettingStarted/RoadMapiOS/DesigningaUserInterface.html#//apple_ref/doc/uid/TP40011343-CH6-SW3">Building an Interface Using Views</a>」</p>
+
+  </div>
+  <dl class="meta">
+      <dt class="author">created by</dt>
+      <dd class="author">monmon</dd>
+      <dt class="time">created at</dt>
+      <dd class="time"><time>2014-05-25 11:41</time></dd>
+      <dt class="author">last modified by</dt>
+      <dd class="author">monmon</dd>
+      <dt class="time">last modified at</dt>
+      <dd class="time">2014-05-25 11:41</dd>
+  </dl>
+</article>
+  </section>
+  <footer>
+    <p>author: monmon</p>
+  </footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+  <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  <script>$(function(){$('pre > code').addClass('prettyprint');});</script>
+</body>
+</html>
